@@ -9,14 +9,15 @@ app.use(express.static('client'))
 
 
 const savedList = []
+
 app.post('/api/savedspells',(req,res)=>{
-savedList.push(req.body.Name)
-console.log(savedList)
+// savedList.push(req.body.Name)
+console.log('hello')
 })
 
 app.get('/api/savedspells',(req,res)=>{
-  console.log(req)
-  res.status(200).send(savedList)
+  console.log('req')
+  // res.status(200).send(savedList)
 })
 
 const port = process.env.PORT || 3000

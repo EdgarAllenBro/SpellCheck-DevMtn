@@ -48,11 +48,16 @@ const savedSpell = (event)=>{
     savedList.appendChild(spell)
     spell.addEventListener('click', spellCheck)
 }
+
 const getList = ()=> axios.get('/api/savedspells')
 .then(res => console.log(res))
+.catch((err)=>{console.log(err)})
 
 const savespell = ()=> axios.post('/api/savedspells',{
-    Name:`${spellName.innerText}`}).then(getList)
+    Name:`${spellName.innerText}`})
+    .then(()=>getList)
+    .catch((err)=>{console.log(err)})
     
-    spellName.addEventListener('click',savespell)
-    Search.addEventListener('submit',spellSearch)
+    
+spellName.addEventListener('click',savespell)
+Search.addEventListener('submit',spellSearch)
