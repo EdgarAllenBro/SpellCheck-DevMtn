@@ -42,12 +42,12 @@ const getSpells = ()=>{
     .then(data => showSpells(data.results))}
 getSpells()
 
-const savedSpell = (event)=>{
-    const spell = document.createElement('p');
-    spell.innerText = event.target.innerText
-    savedList.appendChild(spell)
-    spell.addEventListener('click', spellCheck)
-}
+// const savedSpell = (event)=>{
+//     const spell = document.createElement('p');
+//     spell.innerText = event.target.innerText
+//     savedList.appendChild(spell)
+//     spell.addEventListener('click', spellCheck)
+// }
 
 const getList = ()=> axios.get('/api/savedspells')
 .then(res => console.log(res))
@@ -56,7 +56,7 @@ const getList = ()=> axios.get('/api/savedspells')
 const savespell = ()=> axios.post('/api/savedspells',{
     name:`${spellName.innerText}`
 })
-    .then(res=>console.log(spellName.innerText))
+    .then(res=>console.log(res.data))
     .catch((err)=>{console.log(err)})
     
     

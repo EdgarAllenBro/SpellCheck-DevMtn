@@ -9,7 +9,6 @@ app.use(express.json())
 app.use(express.static('client'))
 
 
-const savedList = []
 
 app.post('/api/savedspells', save)
 
