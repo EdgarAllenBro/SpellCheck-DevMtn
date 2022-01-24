@@ -10,7 +10,7 @@ app.use(express.static('client'))
 
 const savedList = []
 app.post('/api/savedspells',(req,res)=>{
-savedList.push(req.body.spellName)
+savedList.push(req.body.Name)
 console.log(savedList)
 })
 
