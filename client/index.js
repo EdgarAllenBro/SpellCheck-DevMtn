@@ -10,7 +10,6 @@ const savedSpells = document.querySelector('#savedSpells')
 const spellDesc = (spell)=>{
     spellDeet.innerText = `${spell.desc}`
     spellName.innerText = `${spell.name}`
-    // spellName.addEventListener('click', savedSpell)
     }
 const spellCheck = (event) => {
 fetch(`https://www.dnd5eapi.co/api/spells/${event.target.innerText.toLowerCase().replace(/ /g,'-').replace('/','-').replace(`'`, '')}`)
@@ -42,16 +41,15 @@ const getSpells = ()=>{
     .then(data => showSpells(data.results))}
 getSpells()
 
-// const savedSpell = (event)=>{
-//     const spell = document.createElement('p');
-//     spell.innerText = event.target.innerText
-//     savedList.appendChild(spell)
-//     spell.addEventListener('click', spellCheck)
-// }
 
 const getList = ()=> axios.get('/api/savedspells')
-.then(res => console.log(res))
-.catch((err)=>{console.log(err)})
+.then(savedSpells.innerHTML = null)
+.then(res=> res.data.forEach(spell=>{
+    const p = document.createElement('p');
+    p.innerText = spell
+    savedSpells.appendChild(p)
+    p.addEventListener('click',spellCheck)
+}))
 
 const savespell = ()=> axios.post('/api/savedspells',{
     name:`${spellName.innerText}`
@@ -65,6 +63,7 @@ const savespell = ()=> axios.post('/api/savedspells',{
     }))
     .catch((err)=>{console.log(err)})
     
+getList()
     
 spellName.addEventListener('click',savespell)
 Search.addEventListener('submit',spellSearch)
