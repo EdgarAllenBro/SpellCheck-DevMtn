@@ -53,8 +53,9 @@ const getList = ()=> axios.get('/api/savedspells')
 .then(res => console.log(res))
 .catch((err)=>{console.log(err)})
 
-const savespell = ()=> axios.post('/api/savedspells')
-
+const savespell = ()=> axios.post('/api/savedspells',{
+    name:`${spellName.innerText}`
+})
     .then(res=>console.log(spellName.innerText))
     .catch((err)=>{console.log(err)})
     

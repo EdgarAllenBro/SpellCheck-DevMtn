@@ -15,7 +15,7 @@ app.post('/api/savedspells', save)
 
 app.get('/api/savedspells',(req,res)=>{
   console.log('req')
-  // res.status(200).send(savedList)
+  res.status(200).send(savedList)
 })
 
 const port = process.env.PORT || 3000
