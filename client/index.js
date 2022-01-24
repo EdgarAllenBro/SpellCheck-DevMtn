@@ -10,10 +10,13 @@ const spellInfo = document.querySelector('#splInfo')
 const spellDeet = document.querySelector('#splDetail')
 const list = document.querySelector('#spellList')
 const spellName = document.querySelector('#spellName')
+const savedList = document.querySelector('#savedSpells')
+
 
 const spellDesc = (spell)=>{
     spellDeet.innerText = `${spell.desc}`
     spellName.innerText = `${spell.name}`
+    spellName.addEventListener('click', savedSpell)
     }
 const spellCheck = (event) => {
 fetch(`https://www.dnd5eapi.co/api/spells/${event.target.innerText.toLowerCase().replace(/ /g,'-').replace('/','-').replace(`'`, '')}`)
@@ -47,5 +50,13 @@ getSpells()
 
 Search.addEventListener('submit',spellSearch)
 
+const savedSpell = (event)=>{
+    const spell = document.createElement('p');
+    spell.innerText = event.target.innerText
+    savedList.appendChild(spell)
+    spell.addEventListener('click', spellCheck)
+}
 
+const addSpell = ()=>{
 
+}

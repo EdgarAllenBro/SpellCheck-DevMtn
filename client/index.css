@@ -62,3 +62,9 @@ p:active{
 #spellName{
     text-align: center;
 }
+#savedSpells{
+    overflow:scroll;
+    height:20vh;
+    width:35vw;
+    background-color: azure;
+}
