@@ -9,7 +9,7 @@ body{
 }
 
 #mainBd{
-    background-color: rgb(255, 233, 206);
+    background-color: #EEEEEE;
     width: 100vw;
     height:100vh;
     display: flex;
@@ -19,13 +19,15 @@ body{
 }
 
 #search{
-    background-color: seagreen;
+    background-color:#F26419;
+    border-radius: 15px;
     width: 40vw;
-    height:80vh;
+    height:90vh;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
+    box-shadow: 8px 8px 10px 5px;
 }
 #searchBx{
     margin: 10px;
@@ -34,23 +36,27 @@ body{
     margin:11px
 }
 
-#splInfo{
+.splInfo{
     overflow: scroll;
+    border-radius: 15px;
+    border:5px solid #119822;
     background-color: seashell;
     width: 40vw;
-    height: 80vh;
+    height: 90vh;
 }
 #spellList{
     overflow: scroll;
+    border-radius: 15px;
     width:35vw;
     height:50vh;
+    border:5px solid #F6AE2D;
     background-color: rgb(243, 236, 236);
     display: flex;
     flex-wrap: wrap;
     
 }
 p { padding:0px 0px;
-    background-color: rgb(167, 252, 255);
+    background-color: #EEEEEE;
     margin:6px;
     border-radius: 10px;
     height:17px;
@@ -84,4 +90,31 @@ p:active{
 h6{
     display: flex;
     justify-content: center ;
+}
+
+.evocation{
+background-color: #6E675F;
+border:5px solid rgb(150, 0, 0);
+}
+.abjuration{
+
+}
+.conjuration{
+
+}
+
+.divination{
+
+}
+.enchantment{
+
+}
+.illusion{    
+
+}
+.necromancy{
+
+}
+.transmutation{
+
 }

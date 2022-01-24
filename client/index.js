@@ -1,15 +1,24 @@
 const searchBx = document.querySelector('#searchBx')
 const searchBtn = document.querySelector('#searchBtn')
 const Search = document.querySelector('#searchForm')
-const spellInfo = document.querySelector('#splInfo')
+const spellInfo = document.querySelector('.splInfo')
 const spellDeet = document.querySelector('#splDetail')
 const list = document.querySelector('#spellList')
 const spellName = document.querySelector('#spellName')
 const savedSpells = document.querySelector('#savedSpells')
 
+const spellTheme = (school)=>{
+    console.log(school)
+    console.log(spellInfo)
+    spellInfo.classList.add(school)
+}
+
 const spellDesc = (spell)=>{
     spellDeet.innerText = `${spell.desc}`
     spellName.innerText = `${spell.name}`
+    spellInfo.classList.remove('evocation','abjuration','conjuration','divination','enchantment','illusion','necromancy','transmutation')
+    spellTheme(spell.school.index)
+
     }
 const spellCheck = (event) => {
 fetch(`https://www.dnd5eapi.co/api/spells/${event.target.innerText.toLowerCase().replace(/ /g,'-').replace('/','-').replace(`'`, '')}`)
@@ -32,8 +41,8 @@ const spellName = document.createElement('p');
 spellName.innerText = `${spell.name}`;
 list.appendChild(spellName)
 spellName.addEventListener('click', spellCheck)
-})
-}
+})}
+
 
 const getSpells = ()=>{
     fetch('https://www.dnd5eapi.co/api/spells/')
