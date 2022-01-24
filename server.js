@@ -13,12 +13,12 @@ const savedList = []
 app.post('/api/savedspells',(req,res)=>{
 // savedList.push(req.body.Name)
 console.log('hello')
-})
+}).catch((err)=>{console.log(err)})
 
 app.get('/api/savedspells',(req,res)=>{
   console.log('req')
   // res.status(200).send(savedList)
-})
+}).catch((err)=>{console.log(err)})
 
 const port = process.env.PORT || 3000
 
