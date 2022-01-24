@@ -87,14 +87,18 @@ p:active{
     display: flex;
     flex-wrap: wrap;
 }
+#splSchool{
+    display: flex;
+    justify-content: center;
+}
 h6{
     display: flex;
     justify-content: center ;
 }
 
 .evocation{
-background-color: #6E675F;
-border:5px solid rgb(150, 0, 0);
+background-color: #fd8f289f;
+border:9px solid rgb(150, 0, 0);
 }
 .abjuration{
 
@@ -107,13 +111,16 @@ border:5px solid rgb(150, 0, 0);
 
 }
 .enchantment{
-
+background-color: rgb(174, 255, 178);
+border: 9px dotted rgb(13, 95, 57)
 }
-.illusion{    
-
+.illusion{ 
+    background-color: rgb(245, 245, 173);
+    border: 9px solid gold;
 }
 .necromancy{
-
+background-color: rgba(140, 97, 161, 0.767);
+border: 9px solid rgba(19, 6, 27, 0.87)
 }
 .transmutation{
 

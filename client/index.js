@@ -6,6 +6,7 @@ const spellDeet = document.querySelector('#splDetail')
 const list = document.querySelector('#spellList')
 const spellName = document.querySelector('#spellName')
 const savedSpells = document.querySelector('#savedSpells')
+const splSchool = document.querySelector('#splSchool')
 
 const spellTheme = (school)=>{
     console.log(school)
@@ -16,6 +17,7 @@ const spellTheme = (school)=>{
 const spellDesc = (spell)=>{
     spellDeet.innerText = `${spell.desc}`
     spellName.innerText = `${spell.name}`
+    splSchool.innerText = `spells school is ${spell.school.name}`
     spellInfo.classList.remove('evocation','abjuration','conjuration','divination','enchantment','illusion','necromancy','transmutation')
     spellTheme(spell.school.index)
 
