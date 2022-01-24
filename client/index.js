@@ -1,8 +1,3 @@
-// const express = require('express')
-// const path = require('path')
-// const app = express()
-
-
 const searchBx = document.querySelector('#searchBx')
 const searchBtn = document.querySelector('#searchBtn')
 const Search = document.querySelector('#searchForm')
