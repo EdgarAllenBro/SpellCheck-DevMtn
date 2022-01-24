@@ -49,10 +49,18 @@ body{
     flex-wrap: wrap;
     
 }
-p { padding:0px 10px;}
+p { padding:0px 0px;
+    background-color: rgb(167, 252, 255);
+    margin:6px;
+    border-radius: 10px;
+    height:17px;
+
+}
 p:hover{
 cursor: pointer;
-transform: translate(0px, -3px);}
+transform: translate(0px, -2px);
+background-color: azure;
+border-radius: 10px;}
 p:active{
     transform:translate(0px,0px)}
 #splDetail{
@@ -62,9 +70,18 @@ p:active{
 #spellName{
     text-align: center;
 }
+#spellName:hover{
+    cursor: pointer;
+}
 #savedSpells{
     overflow:scroll;
     height:20vh;
     width:35vw;
     background-color: azure;
+    display: flex;
+    flex-wrap: wrap;
+}
+h6{
+    display: flex;
+    justify-content: center ;
 }

@@ -7,7 +7,6 @@ const list = document.querySelector('#spellList')
 const spellName = document.querySelector('#spellName')
 const savedList = document.querySelector('#savedSpells')
 
-
 const spellDesc = (spell)=>{
     spellDeet.innerText = `${spell.desc}`
     spellName.innerText = `${spell.name}`
@@ -43,15 +42,17 @@ const getSpells = ()=>{
     .then(data => showSpells(data.results))}
 getSpells()
 
-Search.addEventListener('submit',spellSearch)
-
 const savedSpell = (event)=>{
     const spell = document.createElement('p');
     spell.innerText = event.target.innerText
     savedList.appendChild(spell)
     spell.addEventListener('click', spellCheck)
 }
+const getList = ()=> axios.get('/api/savedspells')
+.then(res => console.log(res))
 
-const addSpell = ()=>{
-
-}
+const savespell = ()=> axios.post('/api/savedspells',{
+    Name:`${spellName.innerText}`}).then(getList)
+    
+    spellName.addEventListener('click',savespell)
+    Search.addEventListener('submit',spellSearch)
