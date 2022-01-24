@@ -24,7 +24,7 @@ fetch(`https://www.dnd5eapi.co/api/spells/${event.target.innerText.toLowerCase()
 const spellSearch = ()=>{
 event.preventDefault();
 if (searchBx.value != ''){
-fetch(`https://www.dnd5eapi.co/api/spells/${searchBx.value.toLowerCase().replace(/ /g,'-')}`)
+fetch(`https://www.dnd5eapi.co/api/spells/${searchBx.value.toLowerCase().replace(/ /g,'-').replace('/','-').replace(`'`, '')}`)
 .then(response => response.json())
 .then(data => spellDesc(data))}
 else {alert(`Please Enter A Spell Name`)}
